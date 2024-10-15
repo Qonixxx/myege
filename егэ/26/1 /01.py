@@ -35,7 +35,7 @@ N – количество пользователей (натуральное ч
 with open("26.txt") as f:
     s, n = map(int, f.readline().split())
     xs = sorted([int(x) for x in f]) # сортируем список по восрастанию
-    res = [] #
+    res = [] # все файлы, загруженные на диск
     while True:
         if (sum(res) + xs[-1]) > s and (sum(res) + xs[0]) > 0: # если ни один файл не вмещается
             break
@@ -52,4 +52,4 @@ with open("26.txt") as f:
                 xs.pop(0)
 print(len(res), res[-1])
 
-
+# answer - 573 229
