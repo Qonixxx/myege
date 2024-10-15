@@ -62,7 +62,7 @@ int main() {
 			res.push_back(*max_element(begin(all), end(all)));
 			all.pop_back();
 		} 
-		// continue в этом случае ни в коем случае не писать, так как программа "ляжет" и не будет адекватно работать
+		// continue в этом случае запрещено писать, так как программа "ляжет" и не будет адекватно работать
 		if (accumulate(res.begin(), res.end(), 0) + *min_element(begin(all), end(all)) < size) {
 			res.push_back(*min_element(begin(all), end(all)));
 			auto iter = all.cbegin(); // задача сработала только при таком способе задания значения итератора
