@@ -49,14 +49,12 @@ int main() {
 	f >> size >> n;
 	vector <int> all;
 	int obj;
-	for (int i = 1; i != 1001; i++) { // посмотрел, сколько в файле строк  P.S (while(!eof) приводит к ошибке (почему и как сложно сказать, буду смотреть)) 
-		f >> obj;
+	for (int i = 1; f >> obj; i++) { 
 		all.push_back(obj);
 	}
-//	cout << all.size() << ln << ln;
+//	cout << all.size() << ln;
 	sort(begin(all), end(all));
 	vector <int> res;
-//	cout << accumulate(res.begin(), res.end(), 0) + *max_element(begin(all), end(all));
 	while (accumulate(res.begin(), res.end(), 0) + *min_element(begin(all), end(all)) < size) {
 		if (accumulate(res.begin(), res.end(), 0) + *max_element(begin(all), end(all)) < size) { // по этой задаче лучше указывать макс элемент через итератор, так как через индексацию приведёт к переполнению (owerflow)
 			res.push_back(*max_element(begin(all), end(all)));
@@ -69,16 +67,7 @@ int main() {
 			all.erase(iter);
 		}
 	}
-	cout << res.size() << " "; // вывод количества подходящих элементов
-	for (int i = res.size() - 1; i != 0; i--) {
-		cout << res[i]; // res[-1] недопустим, т.к индекс отрицательный
-		break;
-	}
-//	cout << ln << accumulate(res.begin(), res.end(), 0) << ln;
-//	cout << all.size() << ln << ln;
-//	for (int i = 0; i != all.size(); i++) {
-//		cout << all[i] << " ";
-//	}
+	cout << res.size() << " " << res.back() << ln; // вывод количества подходящих элементов и последнего файла
 	return 0;
 //      ответы - 573 229
 }
