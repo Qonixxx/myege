@@ -8,5 +8,5 @@ int f(int n) {
 
 int main() {
 	std::cout << f(7);
-  return 0;
+  	return 0;
 }
