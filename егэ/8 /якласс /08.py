@@ -6,3 +6,4 @@ for x in permutations("ОЛИВИЯ"):
     if s[0] == "О" or s[0] == "Я" and "ЛИВИ" not in s:
         k += 1
 print(k)
+# ans - 236
