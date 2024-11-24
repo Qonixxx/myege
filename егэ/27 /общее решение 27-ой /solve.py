@@ -21,7 +21,7 @@ with open("27.txt") as f:
             cluster += sum(next_cluster, [])
         return cluster
     
-    clasters = [] # 
+    clasters = [] 
     while len(data) > 0: # пока точки в списке есть
         p0 = data.pop() 
         cluster = [p0] + getCluster(p0) # берем первую точку и находим для нее класиер
@@ -37,7 +37,7 @@ with open("27.txt") as f:
             m.append([s, p])
         return min(m)[1]
         
-    centroid = [center(kl) for kl in clusters] # находим центроид для каждого из кластеров
+    centroid = [centr(kl) for kl in clusters] # находим центроид для каждого из кластеров
     
     px = sum(x for x, y in centroid)
     py = sum(y for x, y in centroid)
