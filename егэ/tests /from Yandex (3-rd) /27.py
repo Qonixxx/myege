@@ -1,3 +1,4 @@
+# https://education.yandex.ru/ege/variants/5fc3c948-182b-495f-9d5a-acff30e93c71/task/27
 from math import *
 
 with open("27_B.txt") as f:
