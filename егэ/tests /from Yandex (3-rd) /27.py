@@ -1,14 +1,21 @@
+# Доступны файлы для чтения: 27_A.txt, 27_B.txt, 27_A.xlsx, 27_B.xlsx
 # https://education.yandex.ru/ege/variants/5fc3c948-182b-495f-9d5a-acff30e93c71/task/27
 from math import *
 
-with open("27_B.txt") as f:
+with open("27_A.txt") as f:
     data = []
     for s in f:
         p = [float(c) for c in s.split()]
         data.append(p)
     for i in range(len(data)):
-        data[i][0] = cos(data[i][0])
-        data[i][1] = sin(data[i][1])
+        data[i][0] = data[i][1] * cos(data[i][0])
+        data[i][1] = data[i][1] * sin(data[i][0])
+    # т.к по задаче первое знчение - угол, второе - радиус
+    # правила перевода в декартовую СК:
+    # x = r * cos(ф)
+    # y = r * sin(ф)
+
+#    print(data)
 
     def dist(p1, p2):
         x1, y1, x2, y2 = *p1, *p2
@@ -41,4 +48,4 @@ with open("27_B.txt") as f:
 
     px = sum(x for x, y in centroid)
     py = sum(y for x, y in centroid)
-    print(int(px / k * 10000), int(py / k * 10000))
+#    print(int(px / k * 10000), int(py / k * 10000))
