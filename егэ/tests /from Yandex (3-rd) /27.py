@@ -48,4 +48,4 @@ with open("27_A.txt") as f:
 
     px = sum(x for x, y in centroid)
     py = sum(y for x, y in centroid)
-#    print(int(px / k * 10000), int(py / k * 10000))
+    print(int(px / k * 10000), int(py / k * 10000))
