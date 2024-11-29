@@ -1,3 +1,4 @@
+#https://github.com/sw793/ege/tree/main/Sorted/15/DEL
 from itertools import combinations
 
 def f(x):
