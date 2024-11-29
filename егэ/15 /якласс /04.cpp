@@ -11,8 +11,8 @@ int main() {
             }
         }
         if (flag) {
-			    cout << a << endl;
-			    break; 
+		cout << a << endl;
+		break; 
     	}	
 	  }
 }
