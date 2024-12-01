@@ -11,3 +11,8 @@ a = [int(x) for x in open("17.txt")]
 k11 = [x for x in a if x % 11 == 0]
 k17 = [x for x in a if x % 17 == 0]
 print(len(k11), min(k11)) if len(k11) > len(k17) else print(len(k17), max(k17))
+
+# в три строки
+k11 = [int(x) for x in open("17.txt") if int(x) % 11 == 0]
+k17 = [int(x) for x in open("17.txt") if int(x) % 17 == 0]
+print(len(k11), min(k11)) if len(k11) > len(k17) else print(len(k17), max(k17))
