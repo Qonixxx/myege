@@ -1,3 +1,4 @@
+# отрезки
 from itertools import *
 
 def f(x):
