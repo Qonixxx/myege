@@ -7,5 +7,5 @@ def F(n):
     if n > 1:
         return n - 1 + F(n - 1)
 
-result = F(2024) / F(2022)
-print(result)
+result = F(2024) - F(2022)
+print(result) # 4045
