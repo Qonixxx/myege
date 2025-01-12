@@ -29,8 +29,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef vector <int> vi;
-
 #define fast_cin() \
     ios_base::sync_with_stdio(false); \
     cin.tie(NULL); \
@@ -40,7 +38,7 @@ int main() {
     fast_cin();
     ifstream f("26.txt");
     int n; f >> n;
-    vi all(24 * 60);
+    vector <int> all(24 * 60);
     for (int i = 0; i != n; i++) {
         int in, out; f >> in >> out; 
         all[in]++; all[out]--;
