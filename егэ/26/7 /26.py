@@ -33,7 +33,7 @@ with open("26.txt") as f:
 
 data = sorted(data, key = lambda x: x[1])
 mx = 1
-last = mxt = 0
+last = 0
 st1, end1 = data[0]
 for i in range(n):
     st, end = data[i]
