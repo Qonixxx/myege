@@ -1,6 +1,6 @@
 a = []
 def dist(p1, p2):
-    x1, y1, x2, y2 = *p1, *p2
+    x1, y1, x2, y2 = *p1, *p2 
     return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
 
 def gkl(p0):
