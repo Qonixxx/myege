@@ -5,7 +5,6 @@ s = open("24.txt").readline()
 # третья задача
 reg = r'(AA|BB)+'
 reg = rf'(?=({reg}))'
-
 print(max([len(x.group(1)) // 2 for x in finditer(reg, s)]))
 
 # четвертая задача
