@@ -4,7 +4,7 @@ def dist(p1, p2):
     return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
 
 def gkl(p0):
-    kl = [p for p in a if dist(p0, p) < 0.4]
+    kl = [p for p in a if dist(p0, p) < 0.4] 
     if len(kl) > 0:
         for p in kl: a.remove(p)
         nkl = [gkl(p) for p in kl]
