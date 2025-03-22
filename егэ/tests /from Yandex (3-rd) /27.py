@@ -1,48 +1,41 @@
 from math import *
+
 data = []
-coord = []
+for s in open("27_B.txt"):
+  a, r = map(float, s.split())
+  x = r * cos(radians(a))
+  y = r * sin(radians(a))
+  data.append([x, y])
+print(len(data))
+
 def dist(p1, p2):
     x1, y1, x2, y2 = *p1, *p2
-    return abs(x2 - x1) + abs(y2 - y1)
+    return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
 
-def getCluster(p0):
-    kl = [p for p in data if dist(p0, p) < 0.3]
+def gkl(p0):
+    kl = [p for p in data if dist(p0, p) < 2.5]
     if len(kl) > 0:
         for p in kl: data.remove(p)
-        nextkl = [getCluster(p) for p in kl]
-        for c in nextkl: kl.extend(c)
+        nkl = [gkl(p) for p in kl]
+        for c in nkl: kl.extend(c)
     return kl
-    
+
 def center(kl):
     m = []
     for p in kl:
         s = sum(dist(p, p1) for p1 in kl)
         m.append([s, p])
     return min(m)[1]
-    
-for s in open("27_B.txt"):
-    p = [float(c) for c in s.split()]
-    coord.append(p)
 
-for i in range(len(coord)):
-  a, r = coord[i]
-  x = r * cos(a)
-  y = r * sin(a)
-  data.append([x, y])
-# print(len(data))
-
-clusters = []
+kls = []
 while len(data) > 0:
-    p0 = data.pop()
-    cluster = [p0] + getCluster(p0)
-#    print(len(cluster))
-    clusters.append(cluster)
-# print(len(clusters))
- 
-centroid = [center(kl) for kl in clusters]
+  p0 = data.pop()
+  kl = [p0] + gkl(p0)
+  print(len(kl))
+  kls.append(kl)
+print(len(kls))
 
-px = sum(x for x, y in centroid) / len(clusters)
-py = sum(y for x, y in centroid) / len(clusters)
-print(int(px * 10000), int(py * 10000))
-
-    
+centrs = [center(kl) for kl in kls]
+px = sum(x for x, y in centrs) / len(kls)
+py = sum(y for x, y in centrs) / len(kls)
+print(int(px * 10 ** 4), int(py * 10 ** 4)) 
