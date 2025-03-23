@@ -7,3 +7,16 @@ def f(n):
   if n > 41 and n % 2 == 0: return f(n - 1) - n
   else: return n * f(n - 2)
 print(f(9094) / f(9089))
+
+'-------------------------------------------------------------------------------------------------------------------'
+
+from functools import lru_cache
+@lru_cache(None)
+
+def f(n):
+  if n == 41: return 41
+  if n > 41:
+    return f(n - 1) - n if n % 2 == 0 else n * f(n - 2)
+
+for x in range(1, 10000): f(x)
+print(f(9094) // f(9089))
