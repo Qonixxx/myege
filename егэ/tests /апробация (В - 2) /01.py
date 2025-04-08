@@ -12,4 +12,3 @@ for p in permutations('ABCDEFG'):
     if s2 == s3:
         print('1 2 3 4 5 6 7')
         print(*p)
-        
