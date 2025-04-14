@@ -8,4 +8,4 @@ for l in range(len(s)):
             if all(c[i] + c[i + 1] in ["ZX", "ZY"] for i in range(0, len(c), 2)):
                 m = max(m, len(c))
             else: break
-print(m)
+print(m // 2)
